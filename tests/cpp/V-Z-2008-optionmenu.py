@@ -18,8 +18,12 @@ class App(customtkinter.CTk):
         self.grid_columnconfigure(0, weight=1)
         self.grid_rowconfigure(0, weight=1)
         
-        self.entry = customtkinter.CTkButton(self, width=30, height=40)
-        self.entry.grid(column=0, row=0, pady=20, padx=30, sticky="nsew")
+        self.slider_1 = customtkinter.CTkSlider(self, from_=0, to=100, number_of_steps=255)
+        self.slider_1.set(0)
+        self.slider_1.grid(row=0, column=0, padx=(20, 10), pady=(0, 10), sticky="ew")
+        
+        self.slider_value_label = customtkinter.CTkLabel(self, text =f"Value: ")
+        self.slider_value_label.grid(row=2, column=0, padx=(20, 0), pady=(10, 0), sticky="w")        
 
 if __name__ == "__main__":
     app = App()
